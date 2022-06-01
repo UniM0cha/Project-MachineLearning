@@ -1,5 +1,7 @@
 from crypt import methods
 from flask import Flask, request
+import database
+import predict
 app = Flask(__name__)
 
 
@@ -13,6 +15,13 @@ def hello_world():
 def getPredict():
     value = request.form['item_id']
     print(value)
+    return value
+
+
+@app.route('/test', methods=['GET'])
+def test():
+    pred = predict.predict_next_week(1, 1)
+    return {"holly": "shit"}
 
 
 # 파이썬 명령어로 실행할 수 있음
