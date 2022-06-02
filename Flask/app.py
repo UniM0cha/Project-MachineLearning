@@ -19,8 +19,11 @@ def getPredict():
 
 @app.route('/test', methods=['GET'])
 def test():
-    pred = predict.predict_next_week(1, 1)
-    return {"holly": "shit"}
+    data = database.select_sale(store_id=2, product_id=2)
+    result = predict.predict_next_week(data=data)
+    print(result['df'])
+    print(result['sum'])
+    return 'test'
 
 
 # 파이썬 명령어로 실행할 수 있음
