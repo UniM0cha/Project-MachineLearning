@@ -8,13 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Sale {
     @Id
     @GeneratedValue
     private Long saleId;
+
+    @Temporal(TemporalType.DATE)
     private Date saleDate;
+
     private int saleCount;
 
     @ManyToOne(fetch = FetchType.LAZY)

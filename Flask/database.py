@@ -1,4 +1,6 @@
 import pymysql
+import pandas as pd
+from soupsieve import select
 
 db = pymysql.connect(
     host='localhost',
@@ -12,12 +14,16 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 
-def select_item():
-    sql = """SELECT * FROM sale"""
-    cursor.execute(sql)
+def select_sale(store_id, product_id):
+    sql = """SELECT * FROM sale WHERE store_id=%s AND product_id=%s"""
+    cursor.execute(sql, (store_id, product_id))
     result = cursor.fetchall()
     print(result)
-    return result
+    data = pd.DataFrame(result)
+    data.columns = ['index', 'y', 'ds', 'product_id', 'store_id']
+    data = data[['ds', 'y']]
+
+    return data
 
 
-select_item()
+select_sale(2, 2)
