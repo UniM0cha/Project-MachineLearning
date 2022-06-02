@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-// 부트스트랩
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
   return (
