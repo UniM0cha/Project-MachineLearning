@@ -12,7 +12,6 @@ def predict_next_week(data):
     forecast = prophet.predict(future)
 
     pred = forecast.loc[data.shape[0]:][['ds', 'yhat']]
-    print(pred)
 
     next_week_sum = sum(pred['yhat'])
 

@@ -23,6 +23,3 @@ def select_sale(store_id, product_id):
     data = data[['ds', 'y']]
 
     return data
-
-
-select_sale(2, 2)

@@ -23,7 +23,10 @@ def test():
     result = predict.predict_next_week(data=data)
     print(result['df'])
     print(result['sum'])
-    return 'test'
+    return {
+        'df': result['df'].to_json(),
+        'sum': result['sum']
+    }
 
 
 # 파이썬 명령어로 실행할 수 있음
