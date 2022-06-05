@@ -1,8 +1,8 @@
 import React from "react";
 
-import ReactApexChart from 'react-apexcharts'
 
 // chart 사용
+import ReactApexChart from 'react-apexcharts'
 
 
 
@@ -13,11 +13,11 @@ class MyChart extends React.Component {
     this.state = {
       series: [{
         name: "Desktops",
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        data: [10, 41, 35, 51, 49, 62, 69, 91, 148, 45,87,90]
       },
       {
-        name: "Data2",
-        data: [1, 4, 15, 41, 69, 32, 39, 31, 48]
+        name: "집에보내줘",
+        data: [1, 4, 15, 41, 69, 32, 39, 31, 48,25,64,100]
       }],
 
       options: {  
@@ -33,7 +33,7 @@ class MyChart extends React.Component {
           curve: 'straight'
         },
         title: {
-          text: 'Product Trends by Month',
+          text: '머신러닝 드랍할걸',
           align: 'left'
         },
         grid: {
@@ -43,7 +43,7 @@ class MyChart extends React.Component {
           },
         },
         xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
         }
       }
     }

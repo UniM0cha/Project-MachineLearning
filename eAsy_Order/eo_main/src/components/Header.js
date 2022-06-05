@@ -8,7 +8,7 @@ const Header = () => {
         <div>
         <Navbar  class = "navbar" bg="primary">
             <Container>
-                <Navbar.Brand class = "navbar-brand" href="/"><img src="./img/home_heart.png" width = "65" height = "40"alt = "/home"/></Navbar.Brand>
+                <Navbar.Brand class = "navbar-brand" href="/main"><img src="./img/home_heart.png"  height = "40"alt = "/home"/></Navbar.Brand>
                 <Navbar.Toggle class = "navbar-toggler" aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse class = "navbar-collapse" id="basic-navbar-nav">
                     <Nav  className="me-auto">
