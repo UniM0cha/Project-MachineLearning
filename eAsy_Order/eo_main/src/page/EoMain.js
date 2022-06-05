@@ -11,7 +11,7 @@ const EoMain = () => {
   return (
     <div>
       <div><Header /></div>
-      <div><MyChart/></div>
+      <div className='mainParents'><MyChart/></div>
       
     </div>
 
