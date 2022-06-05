@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 
-
 const Header = () => {
+
     return (
         <div>
         <Navbar  class = "navbar" bg="primary">
@@ -20,5 +20,6 @@ const Header = () => {
         </div>
     )
 }
+
 
 export default Header;

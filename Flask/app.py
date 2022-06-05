@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, request
 import database
 import predict
@@ -20,8 +19,14 @@ def getPredict():
 
 @app.route('/test', methods=['GET'])
 def test():
-    pred = predict.predict_next_week(1, 1)
-    return {"holly": "shit"}
+    data = database.select_sale(store_id=2, product_id=2)
+    result = predict.predict_next_week(data=data)
+    print(result['df'])
+    print(result['sum'])
+    return {
+        'df': result['df'].to_json(),
+        'sum': result['sum']
+    }
 
 
 # 파이썬 명령어로 실행할 수 있음
