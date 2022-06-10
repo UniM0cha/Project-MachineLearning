@@ -1,5 +1,7 @@
+from unittest import result
 import pymysql
 import pandas as pd
+from pyparsing import restOfLine
 from soupsieve import select
 
 db = pymysql.connect(
@@ -14,6 +16,28 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 
+def select_product_stock(store_id):
+    sql = '''SELECT p.product_id, p.product_name, s.stock
+    FROM stock s, product p
+    WHERE s.product_id = p.product_id
+    AND s.store_id = %s'''
+    cursor.execute(sql, (store_id, ))
+    result = cursor.fetchall()
+    return result
+
+
+def select_product_stock_page(store_id, page):
+    sql = '''SELECT p.product_id, p.product_name, s.stock
+    FROM stock s, product p
+    WHERE s.product_id = p.product_id
+    AND s.store_id = %s
+    LIMIT 5
+    OFFSET %s'''
+    cursor.execute(sql, (store_id, (page-1)*5))
+    result = cursor.fetchall()
+    return result
+
+
 def select_sale(store_id, product_id):
     sql = """SELECT * FROM sale WHERE store_id=%s AND product_id=%s"""
     cursor.execute(sql, (store_id, product_id))
@@ -23,3 +47,12 @@ def select_sale(store_id, product_id):
     data = data[['ds', 'y']]
 
     return data
+
+
+def select_product(store_id, page):
+    return
+
+
+def select_stock(store_id):
+    sql = '''SELECT * FROM stock WHERE store_id=%s'''
+    return
