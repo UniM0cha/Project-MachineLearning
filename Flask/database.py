@@ -38,6 +38,17 @@ def select_product_stock_page(store_id, page):
     return result
 
 
+def select_stock_product_id(store_id, product_id):
+    sql = '''SELECT p.product_id, p.product_name, s.stock
+    FROM stock s, product p
+    WHERE s.product_id = p.product_id
+    AND s.store_id = %s
+    AND s_product_id = %s'''
+    cursor.execute(sql, (store_id, product_id))
+    result = cursor.fetchone()
+    return result
+
+
 def select_sale(store_id, product_id):
     sql = """SELECT * FROM sale WHERE store_id=%s AND product_id=%s"""
     cursor.execute(sql, (store_id, product_id))
@@ -56,3 +67,17 @@ def select_product(store_id, page):
 def select_stock(store_id):
     sql = '''SELECT * FROM stock WHERE store_id=%s'''
     return
+
+
+def select_all_store():
+    sql = '''SELECT store_id FROM store'''
+    cursor.execute(sql)
+    result = list(cursor.fetchall())
+    return result
+
+
+def select_all_product():
+    sql = '''SELECT product_id FROM product'''
+    cursor.execute(sql)
+    result = list(cursor.fetchall())
+    return result

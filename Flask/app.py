@@ -14,13 +14,19 @@ def hello_world():
 @app.route('/auto_order_list', methods=['POST'])
 def auto_order_list():
     store_id = request.json['store_id']
-    page = request.json['page']
-    result = predict.auto_order_list_page(store_id=store_id, page=page)
+    # page = request.json['page']
+    result = predict.auto_order_list(store_id=store_id)
 
     return {
         "chart_data": result['chart_data'],
         "table_data": result['table_data']
     }
+
+
+@app.route('/make_pred_csv', methods=['POST'])
+def make_pred_csv():
+    predict.make_pred_csv()
+    return 'success'
 
 
 # 상품 번호를 전달받았을 때 그 상품의 일주일 뒤의 예상 판매량을 돌려준다.
