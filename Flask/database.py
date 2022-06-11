@@ -1,14 +1,12 @@
 import pymysql
 import pandas as pd
 
-db = pymysql.connect(
-    host='localhost',
-    port=3306,
-    user='machine',
-    passwd='learning',
-    db='easy_order',
-    charset='utf8'
-)
+db = pymysql.connect(host='localhost',
+                     port=3306,
+                     user='machine',
+                     passwd='learning',
+                     db='easy_order',
+                     charset='utf8')
 
 cursor = db.cursor()
 
@@ -30,7 +28,7 @@ def select_product_stock_page(store_id, page):
     AND s.store_id = %s
     LIMIT 5
     OFFSET %s'''
-    cursor.execute(sql, (store_id, (page-1)*5))
+    cursor.execute(sql, (store_id, (page - 1) * 5))
     result = cursor.fetchall()
     return result
 
@@ -87,3 +85,14 @@ def select_all_product():
     rows = [list(rows[x]) for x in range(len(rows))]
     return rows
 
+
+def update_stock(store_id, order_list):
+    orders = []
+    for order in order_list:
+        orders.append([order[1], store_id, order[0]])
+
+    sql = '''UPDATE stock SET stock.stock = stock.stock + %s
+    WHERE store_id = %s AND product_id = %s'''
+    result = cursor.executemany(sql, orders)
+    db.commit()
+    return

@@ -1,7 +1,8 @@
-from flask import Flask, request
+from flask import Flask, make_response, request
 import database
 import predict
 import pandas as pd
+
 app = Flask(__name__)
 
 
@@ -28,6 +29,16 @@ def auto_order_list():
 def get_product_list():
     result = database.select_all_product()
     return {"data": result}
+
+
+# 상품 발주
+@app.route('/order', methods=['POST'])
+def order():
+    store_id = request.json['store_id']
+    order = request.json['order']
+    print(store_id, order)
+    database.update_stock(store_id=store_id, order_list=order)
+    return make_response("처리 완료", 201)
 
 
 if __name__ == '__main__':
