@@ -7,7 +7,7 @@ import database
 ###########################################
 def make_pred_csv():
     store_list = database.select_all_store()
-    product_list = database.select_all_product()
+    product_list = database.select_all_product_id()
 
     for store in store_list:
         print("store :", store[0])

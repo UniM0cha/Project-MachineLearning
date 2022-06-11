@@ -73,8 +73,17 @@ def select_all_store():
     return result
 
 
-def select_all_product():
+def select_all_product_id():
     sql = '''SELECT product_id FROM product'''
     cursor.execute(sql)
     result = list(cursor.fetchall())
     return result
+
+
+def select_all_product():
+    sql = '''SELECT * FROM product'''
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    rows = [list(rows[x]) for x in range(len(rows))]
+    return rows
+
