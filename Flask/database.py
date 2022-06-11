@@ -1,8 +1,5 @@
-from unittest import result
 import pymysql
 import pandas as pd
-from pyparsing import restOfLine
-from soupsieve import select
 
 db = pymysql.connect(
     host='localhost',
