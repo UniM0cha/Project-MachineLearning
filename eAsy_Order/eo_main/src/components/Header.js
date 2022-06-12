@@ -12,7 +12,7 @@ const Header = () => {
                 <Navbar.Toggle class = "navbar-toggler" aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse class = "navbar-collapse" id="basic-navbar-nav">
                     <Nav  className="me-auto">
-                        <Nav.Link class = "nav-link" href="balju" bs="light">수동발주</Nav.Link>
+                        <Nav.Link class = "nav-link" href="balju" bs="light" color='white'>수동발주</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
