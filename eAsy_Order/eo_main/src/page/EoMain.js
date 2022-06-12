@@ -13,6 +13,8 @@ import Sheets from '../components/Sheet';
 
 
 const EoMain = () => {
+
+
   const baljuGo = () => {
     // 발주 버튼 누르면
 
@@ -40,6 +42,7 @@ const EoMain = () => {
     console.log(error)
    })
    alert("주문 완료하였습니다")
+   window.location.href = '/main';
   }
 
   return (
@@ -48,7 +51,7 @@ const EoMain = () => {
       <div className='mainParents'><MyChart/></div>
       <div><hr/></div>
       <div className='mainParents'><Sheets/> </div>
-      <div><button onClick={baljuGo} >버튼</button></div>
+      <div className='buttonhi'><button onClick={baljuGo} className="buttonhi"  >발주 주문 넣기</button></div>
     </div>
 
   )
