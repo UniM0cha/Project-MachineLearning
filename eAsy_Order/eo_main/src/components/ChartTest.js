@@ -7,8 +7,6 @@ import ReactApexChart from 'react-apexcharts'
 
 
 
-// const keys = modelData.keys('chart_data'); 
-
 class MyChart extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +21,7 @@ class MyChart extends React.Component {
         data: [1, 4, 15, 41, 69]
       }],
 
-      options: {
+      options: {  
         chart: {
           zoom: {
             enabled: false
@@ -46,14 +44,13 @@ class MyChart extends React.Component {
           },
         },
         xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
         }
       }
     }
   }
   render() {
     return (
-    <div>
       <ReactApexChart
         options={this.state.options}
         series={this.state.series}
@@ -61,8 +58,6 @@ class MyChart extends React.Component {
         width={500}
         height={300}
         />
-        {/* <h1>{keys}</h1> */}
-        </div>
     );
   }
 }
