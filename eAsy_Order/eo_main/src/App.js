@@ -11,7 +11,7 @@ import EoMain from './page/EoMain';
 import EoBalju from './page/EoBalju';
 import EoLogin from './page/EoLogin';
 import EoManage from './page/EoManage';
-import Test from './page/test';
+
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<EoLogin />}></Route>
       </Routes>
       <Routes>
-        {/* 기본 경로 = main */}
+        {/* 메인페이지 */}
         <Route path="/main" element={<EoMain />}></Route>
       </Routes>
       <Routes>
@@ -32,10 +32,7 @@ function App() {
         {/* 관리 경로 */}
         <Route path="/balju" element={<EoBalju />}></Route>
       </Routes>
-      <Routes>
-        {/* 테스트 페이지 */}
-        <Route path="/test" element={<Test />}></Route>
-      </Routes>
+
     </BrowserRouter>
   );
 }
