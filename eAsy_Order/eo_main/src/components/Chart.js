@@ -7,20 +7,33 @@ import ReactApexChart from 'react-apexcharts'
 
 
 
+
 // const keys = modelData.keys('chart_data'); 
 
 class MyChart extends React.Component {
   constructor(props) {
     super(props);
-
+// [2주(일)전 판매량, 1주 전 판매량, 오늘 판매량, 예측값]
     this.state = {
       series: [{
-        name: "Desktops",
-        data: [10, 41, 35, 51, 49]
+        name: "1번아이템",
+        data: [3, 5, 10, 3]
       },
       {
-        name: "집에보내줘",
-        data: [1, 4, 15, 41, 69]
+        name: "2번아이템",
+        data: [3, 5, 2, 10]
+      },
+      {
+        name: "3번아이템",
+        data: [5, 6, 6, 12]
+      },
+      {
+        name: "4번아이템",
+        data: [1, 5, 3, 10]
+      },
+      {
+        name: "5번아이템",
+        data: [1, 4, 15, 8]
       }],
 
       options: {
@@ -36,7 +49,7 @@ class MyChart extends React.Component {
           curve: 'straight'
         },
         title: {
-          text: '머신러닝 드랍할걸',
+          text: '판매량 추이',
           align: 'center'
         },
         grid: {
@@ -46,7 +59,7 @@ class MyChart extends React.Component {
           },
         },
         xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          categories: ['저저번주', '저번주', '이번주', '다음주(예측)'],
         }
       }
     }
