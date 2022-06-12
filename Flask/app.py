@@ -4,8 +4,10 @@ from matplotlib.font_manager import json_load
 import database
 import predict
 import pandas as pd
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
@@ -31,7 +33,10 @@ def auto_order_list():
 @app.route('/product_list', methods=['POST'])
 def get_product_list():
     result = database.select_all_product()
-    return {"data": result}
+    list = []
+    for product in result:
+        list.append(dict(product_id=product[0], product_name=product[1]))
+    return {"data": list}
 
 
 # 상품 발주
@@ -54,4 +59,4 @@ def order():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
