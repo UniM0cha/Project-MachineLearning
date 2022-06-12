@@ -1,4 +1,6 @@
+import json
 from flask import Flask, make_response, request
+from matplotlib.font_manager import json_load
 import database
 import predict
 import pandas as pd
@@ -35,10 +37,19 @@ def get_product_list():
 # 상품 발주
 @app.route('/order', methods=['POST'])
 def order():
-    store_id = request.json['store_id']
-    order = request.json['order']
-    print(store_id, order)
-    database.update_stock(store_id=store_id, order_list=order)
+    store_id = 1
+    # store_id = request.json['store_id']
+    req_order_list = request.json['order']
+
+    order_list = []
+    for order in req_order_list:
+        list = []
+        list.append(order['product_id'])
+        list.append(order['order'])
+        order_list.append(list)
+
+    print(order_list)
+    database.update_stock(store_id=store_id, order_list=order_list)
     return make_response("처리 완료", 201)
 
 
