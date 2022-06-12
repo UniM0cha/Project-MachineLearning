@@ -14,7 +14,8 @@ def hello_world():
 # 자동발주 홈화면
 @app.route('/auto_order_list', methods=['POST'])
 def auto_order_list():
-    store_id = request.json['store_id']
+    # store_id = request.json['store_id']
+    store_id = 1
     # page = request.json['page']
     result = predict.auto_order_list(store_id=store_id)
 
