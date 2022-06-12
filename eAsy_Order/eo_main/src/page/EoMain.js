@@ -5,19 +5,49 @@ import Header from '../components/Header';
 
 // chart
 import MyChart from '../components/Chart';
+import axios from 'axios';
 
-//sheets
-import Sheets from '../components/Sheet';
+// //sheets
+// import Sheets from '../components/Sheet';
 
 
 const EoMain = () => {
+  const baljuGo = () => {
+    // 발주 버튼 누르면
+
+    let sendData = {
+      stroe_id : 1,
+
+      order: [
+        {product_id: 1, order: 3},
+        {product_id: 2, order: 19},
+        {product_id: 3, order: 4},
+        {product_id: 4, order: 4},
+        {product_id: 5, order: 4}
+      ]
+    };
+
+    const option = {
+      method : "POST",
+      url : "http://112.151.4.252:5000/order",
+      data : sendData
+    };
+
+   axios(option).then(({data}) => {
+    console.log(data);
+   }).catch((error) => {
+    console.log(error)
+   })
+
+   alert("주문 완료하였습니다")
+  }
+
   return (
     <div>
       <div><Header /></div>
       <div className='mainParents'><MyChart/></div>
-      <div className='mainParents'><Sheets/>
-     
-      </div>
+      {/* <div className='mainParents'><Sheets/> </div> */}
+      <div><button onClick={baljuGo} >버튼</button></div>
     </div>
 
   )

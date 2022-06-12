@@ -33,7 +33,10 @@ def auto_order_list():
 @app.route('/product_list', methods=['POST'])
 def get_product_list():
     result = database.select_all_product()
-    return {"data": result}
+    list = []
+    for product in result:
+        list.append(dict(product_id=product[0], product_name=product[1]))
+    return {"data": list}
 
 
 # 상품 발주
