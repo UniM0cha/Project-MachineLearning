@@ -11,6 +11,7 @@ import EoMain from './page/EoMain';
 import EoBalju from './page/EoBalju';
 import EoLogin from './page/EoLogin';
 import EoManage from './page/EoManage';
+import Axiostest from './page/Axiostest';
 
 
 function App() {
@@ -32,7 +33,10 @@ function App() {
         {/* 관리 경로 */}
         <Route path="/balju" element={<EoBalju />}></Route>
       </Routes>
-
+      <Routes>
+        {/* 관리 경로 */}
+        <Route path="/testest" element={<Axiostest />}></Route>
+      </Routes>
     </BrowserRouter>
   );
 }

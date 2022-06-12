@@ -7,8 +7,9 @@ import Header from '../components/Header';
 import MyChart from '../components/Chart';
 import axios from 'axios';
 
-// //sheets
-// import Sheets from '../components/Sheet';
+// table
+import Sheets from '../components/Sheet';
+
 
 
 const EoMain = () => {
@@ -38,7 +39,6 @@ const EoMain = () => {
    }).catch((error) => {
     console.log(error)
    })
-
    alert("주문 완료하였습니다")
   }
 
@@ -46,7 +46,8 @@ const EoMain = () => {
     <div>
       <div><Header /></div>
       <div className='mainParents'><MyChart/></div>
-      {/* <div className='mainParents'><Sheets/> </div> */}
+      <div><hr/></div>
+      <div className='mainParents'><Sheets/> </div>
       <div><button onClick={baljuGo} >버튼</button></div>
     </div>
 
