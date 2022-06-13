@@ -7,8 +7,6 @@ def auto_order_list(store_id):
     db_result_df = pd.DataFrame(
         db_result, columns=['product_id', 'product_name', 'stock'])
 
-    print(db_result_df)
-
     pred_sum_list = []
     pred_list = []
     for product_id in db_result_df['product_id']:

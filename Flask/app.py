@@ -23,6 +23,8 @@ def auto_order_list():
     # page = request.json['page']
     result = predict.auto_order_list(store_id=store_id)
 
+    print(result['chart_data'])
+
     return {
         "chart_data": result['chart_data'],
         "table_data": result['table_data']
@@ -59,4 +61,4 @@ def order():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=4000, debug=True)
