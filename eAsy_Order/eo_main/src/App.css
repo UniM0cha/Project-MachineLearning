@@ -163,3 +163,18 @@
   margin-top: 5px;
   margin-bottom: 50px;
 }
+
+.fonth1{
+  display: flex;
+ 
+  justify-content : center;
+  font-size: x-large;
+  font-family: "ROKASM";
+  src: url("./resource/font/ROKAF\ Sans\ Medium.ttf");
+  font-style: inherit;
+  color: #282c34;
+  margin-top: 8px;
+  margin-bottom: -10px;
+
+
+}
