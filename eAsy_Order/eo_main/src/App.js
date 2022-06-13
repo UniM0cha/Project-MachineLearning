@@ -12,6 +12,7 @@ import EoBalju from './page/EoBalju';
 import EoLogin from './page/EoLogin';
 import EoManage from './page/EoManage';
 import Axiostest from './page/Axiostest';
+import EoManageNA from './page/EoManageNonAuto';
 
 
 function App() {
@@ -26,15 +27,19 @@ function App() {
         <Route path="/main" element={<EoMain />}></Route>
       </Routes>
       <Routes>
-        {/* 발주 경로 */}
-        <Route path="/admin" element={<EoManage />}></Route>
+        {/* 발주 세부 경로 */}
+        <Route path="/manage" element={<EoManage />}></Route>
       </Routes>
       <Routes>
-        {/* 관리 경로 */}
+        {/* 발주 세부 경로 */}
+        <Route path="/managena" element={<EoManageNA />}></Route>
+      </Routes>
+      <Routes>
+        {/* 발주 경로 */}
         <Route path="/balju" element={<EoBalju />}></Route>
       </Routes>
       <Routes>
-        {/* 관리 경로 */}
+        {/*  test 경로*/}
         <Route path="/testest" element={<Axiostest />}></Route>
       </Routes>
     </BrowserRouter>

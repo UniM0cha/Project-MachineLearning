@@ -42,7 +42,7 @@ const EoMain = () => {
     console.log(error)
    })
    alert("주문 완료하였습니다")
-   window.location.href = '/main';
+   window.location.href = '/manage';
   }
 
   return (

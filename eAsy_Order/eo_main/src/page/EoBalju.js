@@ -10,10 +10,12 @@ import SheetNonAuto from "../components/SheetNonAuto";
 
 import axios from 'axios';
 
+
+// 서버에 보낼 값
 const BALJU_LIST = [
-    { "product_id": 1, "order": 3 },
-    { "product_id": 2, "order": 19 },
-    { "product_id": 3, "order": 4 }
+    { "product_id": 6, "order": 3 },
+    { "product_id": 8, "order": 8 },
+    { "product_id": 10, "order": 5 }
 ];
 
 const EoBalju = () => {
@@ -32,11 +34,11 @@ const EoBalju = () => {
           stroe_id : 1,
     
           order: [
-            {product_id: 1, order: 3},
-            {product_id: 2, order: 19},
-            {product_id: 3, order: 4},
-            {product_id: 4, order: 4},
-            {product_id: 5, order: 4}
+            {product_id: 6, order: 3},
+            {product_id: 8, order: 8},
+            {product_id: 10, order: 5},
+           
+        
           ]
         };
     
@@ -52,7 +54,7 @@ const EoBalju = () => {
         console.log(error)
        })
        alert("주문 완료하였습니다")
-       window.location.href = '/main';
+       window.location.href = '/managena';
       }
     
 

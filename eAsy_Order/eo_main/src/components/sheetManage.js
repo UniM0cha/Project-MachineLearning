@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-const Sheets = () => {
+const SheetManage = () => {
 
 
     return (
@@ -16,54 +16,44 @@ const Sheets = () => {
                     상품명
                 </th>
                 <th>
-                    재고량
-                </th>
-                <th>
-                    예측판매량
-                </th>
-                <th>
                     발주량
                 </th>
 
                 <tr>
                     <td>1</td>
                     <td>1번아이템</td>
-                    <td>3</td>
-                    <td>15</td>
                     <td>12</td>
+                   
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>2번아이템</td>
-                    <td>2</td>
-                    <td>17</td>
                     <td>15</td>
+                    
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>3번아이템</td>
-                    <td>5</td>
-                    <td>12</td>
                     <td>7</td>
+                    
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>4번아이템</td>
-                    <td>2</td>
-                    <td>15</td>
                     <td>13</td>
+                    
                 </tr>
                 <tr>
                     <td>5</td>
                     <td>5번아이템</td>
-                    <td>7</td>
-                    <td>20</td>
                     <td>13</td>
+                    
                 </tr>
+        
             </table>
         </div>
 
     )
 }
 
-export default Sheets
+export default SheetManage

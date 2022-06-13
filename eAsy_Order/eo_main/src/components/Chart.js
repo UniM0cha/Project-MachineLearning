@@ -17,11 +17,11 @@ class MyChart extends React.Component {
     this.state = {
       series: [{
         name: "1번아이템",
-        data: [3, 5, 10, 3]
+        data: [3, 5, 10, 15]
       },
       {
         name: "2번아이템",
-        data: [3, 5, 2, 10]
+        data: [3, 5, 2, 17]
       },
       {
         name: "3번아이템",
@@ -29,11 +29,11 @@ class MyChart extends React.Component {
       },
       {
         name: "4번아이템",
-        data: [1, 5, 3, 10]
+        data: [1, 5, 3, 15]
       },
       {
         name: "5번아이템",
-        data: [1, 4, 15, 8]
+        data: [1, 4, 15, 20]
       }],
 
       options: {
@@ -71,8 +71,8 @@ class MyChart extends React.Component {
         options={this.state.options}
         series={this.state.series}
         typs='line'
-        width={500}
-        height={300}
+        width={600}
+        height={350}
         />
         {/* <h1>{keys}</h1> */}
         </div>

@@ -1,0 +1,11 @@
+{
+    "table_data": [
+
+    {"product_id": 0, "product_name": "0번아이템", "stock": 10, "predict": 3, "order": 0},
+    {"product_id": 1, "product_name": "1번아이템", "stock": 2, "predict": 10, "order": 8},
+    {"product_id": 0, "product_name": "0번아이템", "stock": 10, "predict": 3, "order": 0},
+    {"product_id": 0, "product_name": "0번아이템", "stock": 10, "predict": 3, "order": 0},
+    {"product_id": 0, "product_name": "0번아이템", "stock": 10, "predict": 3, "order": 0}
+
+]
+}
